@@ -1,0 +1,57 @@
+:root {
+  --bg-start: #f7f3e8;
+  --bg-end: #e3edf7;
+  --panel-bg: #fffdf7;
+  --card-bg: #fffaf0;
+  --panel-border: #c7b79a;
+  --panel-shadow: 0 14px 30px rgba(84, 65, 28, 0.18);
+
+  --text: #5a4e3d;
+  --text-strong: #2f261b;
+  --text-muted: #7f705c;
+
+  --switch-on-bg: #225a36;
+  --switch-on-text: #f0fff6;
+  --switch-on-glow: rgba(34, 90, 54, 0.28);
+  --switch-off-bg: #d0c8b9;
+  --switch-off-text: #453a2d;
+
+  --wire-weak: #c9bca5;
+  --wire-strong: #786e5c;
+  --wire-dot-off: #b5ad9e;
+  --wire-dot-on: #2f7f4a;
+
+  --bulb-on: #ffd44d;
+  --bulb-glow: rgba(255, 212, 77, 0.65);
+  --bulb-off: #8d8d8d;
+  --focus-ring: #1f5d8b;
+
+  --mono: 'Cascadia Mono', Consolas, monospace;
+  --sans: 'Segoe UI', 'Trebuchet MS', sans-serif;
+
+  font-family: var(--sans);
+  color: var(--text);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 14%, rgba(255, 238, 170, 0.48), transparent 46%),
+    radial-gradient(circle at 86% 86%, rgba(151, 191, 227, 0.35), transparent 42%),
+    linear-gradient(140deg, var(--bg-start), var(--bg-end));
+}

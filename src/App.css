@@ -1,0 +1,344 @@
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 220px 1fr 320px;
+  gap: 14px;
+  padding: 14px;
+}
+
+.sidebar,
+.editor-panel,
+.canvas-wrap {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #c7b79a;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.sidebar h2,
+.editor-panel h2,
+.canvas-header h1,
+.connection-list h3 {
+  margin: 0 0 8px;
+}
+
+.sidebar p,
+.editor-panel p,
+.canvas-header p,
+.connection-list p {
+  margin: 6px 0;
+}
+
+.palette-item {
+  width: 100%;
+  border: 1px solid #8f7e61;
+  background: #f8f1e3;
+  color: #2f261b;
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-align: left;
+  cursor: grab;
+  margin-top: 8px;
+}
+
+.canvas-wrap {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+}
+
+.canvas-header .hint {
+  color: #6f614e;
+  font-size: 0.92rem;
+}
+
+.canvas {
+  min-height: 620px;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(0deg, rgba(162, 150, 127, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(162, 150, 127, 0.1) 1px, transparent 1px),
+    #fbf8ef;
+  background-size: 24px 24px, 24px 24px, auto;
+  border: 1px solid #d4c6ad;
+  border-radius: 10px;
+}
+
+.scene3d-host {
+  min-height: 620px;
+  border: 1px solid #d4c6ad;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fbf8ef;
+}
+
+.wire-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.wire-path {
+  fill: none;
+  stroke: #3a7f4f;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.component {
+  width: 168px;
+  position: absolute;
+  border: 1px solid #8e7f62;
+  border-radius: 10px;
+  background: #fffaf0;
+  box-shadow: 0 3px 8px rgba(62, 47, 16, 0.15);
+  user-select: none;
+}
+
+.component.selected {
+  outline: 2px solid #1f5d8b;
+}
+
+.component-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+  padding: 4px 8px;
+  background: #efe3cc;
+  border-bottom: 1px solid #c9b99a;
+  border-radius: 10px 10px 0 0;
+  cursor: move;
+  font-size: 0.72rem;
+}
+
+.component-body {
+  min-height: 92px;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+}
+
+.switch-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.switch-btn.on {
+  background: #296c3f;
+  color: #f0fff6;
+}
+
+.switch-btn.off {
+  background: #bfb5a3;
+  color: #3f3529;
+}
+
+.bulb {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.bulb.on {
+  background: #ffd44d;
+  box-shadow: 0 0 18px rgba(255, 212, 77, 0.8);
+}
+
+.bulb.off {
+  background: #8d8d8d;
+}
+
+.program-chip {
+  background: #e2edff;
+  border: 1px solid #9bb1d3;
+  color: #234064;
+  border-radius: 8px;
+  padding: 5px 8px;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chip-error {
+  background: #c64040;
+  color: #fff;
+  border-radius: 999px;
+  padding: 1px 6px;
+  font-size: 0.75rem;
+}
+
+.ports {
+  position: absolute;
+  top: 32px;
+  display: grid;
+  gap: 6px;
+}
+
+.ports-left {
+  left: -14px;
+}
+
+.ports-right {
+  right: -14px;
+}
+
+.port {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid #7f735d;
+  background: #fff;
+  font-size: 0.62rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.input-port {
+  background: #f2f6ff;
+}
+
+.output-port {
+  background: #f0fff4;
+}
+
+.output-port.active {
+  box-shadow: 0 0 0 2px #1f5d8b;
+}
+
+.editor-panel textarea {
+  width: 100%;
+  min-height: 190px;
+  resize: vertical;
+  border-radius: 8px;
+  border: 1px solid #b5a688;
+  font-family: 'Cascadia Mono', Consolas, monospace;
+  font-size: 0.85rem;
+  padding: 8px;
+}
+
+.error-text {
+  color: #a72828;
+}
+
+.ok-text {
+  color: #27613a;
+}
+
+.pending-text {
+  border-top: 1px dashed #c7b79a;
+  padding-top: 8px;
+  font-size: 0.92rem;
+}
+
+.connection-list {
+  margin-top: 12px;
+  border-top: 1px dashed #c7b79a;
+  padding-top: 10px;
+}
+
+.connection-builder {
+  margin-top: 12px;
+  border-top: 1px dashed #c7b79a;
+  padding-top: 10px;
+}
+
+.connection-builder label {
+  display: grid;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 0.88rem;
+  color: #4b402f;
+}
+
+.connection-builder select,
+.connect-btn,
+.delete-btn {
+  border-radius: 8px;
+  border: 1px solid #b5a688;
+  background: #fffaf0;
+  color: #2f261b;
+  padding: 7px 9px;
+  font-size: 0.88rem;
+}
+
+.connect-btn,
+.delete-btn {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.delete-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* ── Traffic Light ────────────────────────────────────────── */
+
+.traffic-light {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 8px 14px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.tl-bulb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #444;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.tl-red {
+  background: #4a1a1a;
+}
+
+.tl-red.on {
+  background: #ff3b3b;
+  box-shadow: 0 0 10px 4px rgba(255, 59, 59, 0.7);
+}
+
+.tl-yellow {
+  background: #3a2e00;
+}
+
+.tl-yellow.on {
+  background: #ffd700;
+  box-shadow: 0 0 10px 4px rgba(255, 215, 0, 0.7);
+}
+
+.tl-green {
+  background: #0a2a10;
+}
+
+.tl-green.on {
+  background: #22c55e;
+  box-shadow: 0 0 10px 4px rgba(34, 197, 94, 0.7);
+}
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .canvas {
+    min-height: 500px;
+  }
+
+  .scene3d-host {
+    min-height: 500px;
+  }
+}
